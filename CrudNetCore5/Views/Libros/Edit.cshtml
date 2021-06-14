@@ -1,0 +1,64 @@
+﻿@model CrudNetCore5.Models.Libro
+
+@{
+    ViewData["Title"] = "Editar Libro";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Editar Libro</h3>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-8 offset-2">
+            <form asp-action="Edit" method="post">
+
+                <input type="hidden" asp-for="Id"/>
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Titulo"></label>
+                    <input asp-for="Titulo" class="form-control">
+                    <span asp-validation-for="Titulo" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Descripcion"></label>
+                    <input asp-for="Descripcion" class="form-control">
+                    <span asp-validation-for="Descripcion" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="FechaLanzamiento"></label>
+                    <input asp-for="FechaLanzamiento" class="form-control">
+                    <span asp-validation-for="FechaLanzamiento" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Autor"></label>
+                    <input asp-for="Autor" class="form-control">
+                    <span asp-validation-for="Autor" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Precio"></label>
+                    <input asp-for="Precio" class="form-control">
+                    <span asp-validation-for="Precio" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Registrar</button>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts{ 
+
+    @{ 
+        <partial name="_ValidationScriptsPartial"/>
+    }
+
+}
